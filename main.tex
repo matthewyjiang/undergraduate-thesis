@@ -83,9 +83,13 @@ sorting=none
 
 % Copywright page (optional)
 % ========================================
-% \pagenumbering{roman}
-% \setcounter{page}{2}
-% \input{Additional/Copyright.tex}
+\pagenumbering{roman}
+\setcounter{page}{2}
+\input{Additional/Copyright.tex}
+
+% Approval page
+%========================================
+\input{Additional/Approval.tex}
 
 % Dedication page (optional)
 %========================================
@@ -95,9 +99,9 @@ sorting=none
 
 % Acknowledgements Page (optional)
 %========================================
-\pagenumbering{roman} % Uncomment if Copyright page is not in use
+% \pagenumbering{roman} % Uncomment if Copyright page is not in use
 \addcontentsline{toc}{chapter}{Acknowledgments}
-\setcounter{page}{2} % Uncomment if Copyright page is not in use
+% \setcounter{page}{2} % Uncomment if Copyright page is not in use
 \input{Additional/Acknowledgements.tex}
 \clearpage
 
