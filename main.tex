@@ -27,7 +27,7 @@
 \usepackage[bookmarks=true, hidelinks]{hyperref}
 \usepackage[
 backend=bibtex,
-style=numeric,
+style=numer,
 sorting=none
 ]{biblatex}
 % \usepackage{natbib}
@@ -47,6 +47,8 @@ sorting=none
 \usepackage{listings}
 \usepackage{bm}
 \usepackage{lipsum}  
+\usepackage{algorithm}
+\usepackage{algorithmic}
 
 
 
@@ -159,14 +161,7 @@ sorting=none
 % Chapter 2
 \input{MainContent/Chapter2.tex}
 
-% Chapter 3
-\input{MainContent/Chapter3.tex}
 
-% Chapter 4
-\input{MainContent/Chapter4.tex}
-
-% Chapter 5
-\input{MainContent/Chapter5.tex}
 \clearpage
 
 % % Appendices
@@ -175,10 +170,10 @@ sorting=none
 
 % Reference
 %========================================
-\addcontentsline{toc}{chapter}{Bibliography}
+\addcontentsline{toc}{chapter}{References}
 \begin{singlespace}
     \setlength\bibitemsep{\baselineskip}
-    \printbibliography[title={Bibliography}]
+    \printbibliography[title={References}]
 \end{singlespace}
 
 \end{document}

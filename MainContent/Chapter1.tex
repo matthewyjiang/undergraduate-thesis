@@ -1,7 +1,14 @@
-\chapter{\leavevmode\newline Introduction}
+\chapter{\leavevmode \newline Introduction}
 \label{chap:Introduction}
 
 %Insert your content below the line
 %-------------------------------------------
 
-\lipsum[2-6]
+The future of space exploration increasingly depends on our ability to establish sustainable human presence beyond Earth. As we contemplate the colonization of other planets within our solar system, the limitations of current robotic exploration systems present significant challenges. Traditional wheeled planetary rovers, while groundbreaking in their contributions, rely heavily on human oversight and primarily utilize camera-based sensors that inadequately capture crucial environmental characteristics, such as unexpected changes in terrain properties.
+
+The basis for this thesis is NASA's Legged Autonomous Surface Science In Analogue Environments, or LASSIE \cite{Fisher2023LASSIE} project, exploring how legged roving platforms can utilize the leg motors to measure geotechnical properties of regolith, and how these measurements can be used to update the operation plans. The expected target of this research is a legged autonomous rover deployed on a planetary surface, which uses its leg motor to perform compression and shearing tests, measuring the mechanical response of the upper few centimeters of the regolith.
+
+In this work, an approach is presented for navigation on unknown granular terrain that utilizes the measurements that are obtained from the robot's compression and shearing tests, which can be combined with existing algorithms used to navigate a robot through environments with physical obstacles, which are detectable by sensors such as cameras, lidar, or radar. This approach is developed specifically to integrate with the LASSIE exploration loop, which involves repeatedly performing tests at different locations, and updating the exploration map with the results of these tests. The algorith both plans a safe path for the robot to follow, as well as selecting the next locations to perform a test.
+
+By developing advanced autonomous systems capable of precise environmental assessment, this research aims to enable safer navigation for exploratory robots while simultaneously identifying optimal sites for infrastructure development. Such capabilities are not merely technological improvements but essential prerequisites for viable planetary colonization.
+
