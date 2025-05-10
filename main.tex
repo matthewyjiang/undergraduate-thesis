@@ -9,7 +9,6 @@
 % \pagestyle{headings}
 \usepackage{titlesec}
 \usepackage{titletoc}
-\usepackage{lipsum}
 % \usepackage{fmtcount} % for textual representation of numbers
 \titleformat{\chapter}[display] 
 {\normalfont\huge\bfseries}{\chaptertitlename~\thechapter}{30pt}{\Huge}   
@@ -17,7 +16,6 @@
 \usepackage{makecell}
 \usepackage{float}
 \usepackage{amsmath,amssymb,amsthm,amsfonts}
-\usepackage{algorithmic}
 \usepackage{graphicx}
 \usepackage{booktabs, multirow} % for borders and merged ranges
 \usepackage{tocloft}
@@ -25,9 +23,11 @@
 \usepackage{setspace}
 \usepackage[utf8]{inputenc}
 \usepackage[bookmarks=true, hidelinks]{hyperref}
+\usepackage{commath}
+\usepackage{verbatimbox}
 \usepackage[
 backend=bibtex,
-style=numer,
+style=numeric,
 sorting=none
 ]{biblatex}
 % \usepackage{natbib}
@@ -48,7 +48,7 @@ sorting=none
 \usepackage{bm}
 \usepackage{lipsum}  
 \usepackage{algorithm}
-\usepackage{algorithmic}
+\usepackage{algpseudocode}
 
 
 
@@ -69,6 +69,10 @@ sorting=none
   \footnotetext{#1}%
   \let\thefootnote\svthefootnote%
 }
+
+\newcommand\algonamefull{Safe Reactive Planning for Granular Terrain}
+
+\newcommand\algoname{SRPGT}
 
 \doublespacing
 \begin{document}
@@ -126,11 +130,11 @@ sorting=none
 % List of figures and tables
 %========================================
 % \addcontentsline{toc}{chapter}{List of Tables}
-\begin{singlespace}
-    \setlength\cftbeforetabskip{\baselineskip}
-    \listoftables
-\end{singlespace}
-\clearpage
+% \begin{singlespace}
+%     \setlength\cftbeforetabskip{\baselineskip}
+%     \listoftables
+% \end{singlespace}
+% \clearpage
 
 % \addcontentsline{toc}{chapter}{List of Figures}
 \begin{singlespace}
@@ -161,11 +165,19 @@ sorting=none
 % Chapter 2
 \input{MainContent/Chapter2.tex}
 
+% Chapter 3
+\input{MainContent/Chapter3.tex}
+
+% Chapter 4
+\input{MainContent/Chapter4.tex}
+
+% Chapter 5
+\input{MainContent/Chapter5.tex}
 
 \clearpage
 
 % % Appendices
-% \input{MainContent/Appendix.tex}
+\input{MainContent/Appendix.tex}
 
 
 % Reference

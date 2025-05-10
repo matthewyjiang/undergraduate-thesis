@@ -1,9 +1,73 @@
 \begin{appendices}
 
 \addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{\appendixname\space}}
-\addtocontents{toc}{\protect\renewcommand{\protect\cftchapnumwidth}{6em}}
+\addtocontents{toc}{\protect\renewcommand{\protect\cftchapnumwidth}{7em}}
 
-\chapter{This is Appendix}
-Add more chapters of appendices if need to.
+
+
+\chapter{Configuration File Parameters}
+
+The following configuration parameters are available in the code demonstration and can be modified through the provided configuration file. These settings control the environment, robot behavior, optimization strategy, and display preferences.
+
+\section*{Environment Parameters}
+\begin{itemize}
+    \item \textbf{environment.FILENAME} - Specifies the terrain data file (e.g., \texttt{"terrain.csv"}).
+    \item \textbf{environment.THRESHOLD} - Sets the safety threshold for classifying terrain as safe or unsafe.
+    \item \textbf{environment.SIMPLIFICATION\_CONSTANT} — Adjusts the simplification level of obstacle polygons derived from unsafe regions.
+\end{itemize}
+
+\section*{Robot Parameters}
+\begin{itemize}
+    \item \textbf{robot.ROBOT\_RADIUS}: Defines the robot's physical radius, used for collision checking and power diagram erosion.
+    \item \textbf{robot.MODE}: Specifies the robot's operation mode (e.g., \texttt{"navigate"} for goal-directed movement).
+\end{itemize}
+
+\section*{Optimization Parameters}
+\begin{itemize}
+    \item \textbf{optimization.NUM\_EXPANDERS}: Determines the number of candidate points evaluated for safe set expansion.
+    \item \textbf{optimization.KERNEL\_VARIANCE}: Sets the variance parameter of the GP kernel for terrain risk modeling.
+    \item \textbf{optimization.KERNEL\_LENGTHSCALE}: Sets the length scale of the GP kernel, controlling spatial smoothness.
+    \item \textbf{optimization.BETA}: Configures the confidence interval scaling factor used in the upper confidence bound (UCB).
+    \item \textbf{optimization.LIPSCHITZ}: Defines the Lipschitz constant assumed during safe set growth calculations.
+\end{itemize}
+
+\section*{Display Parameters}
+\begin{itemize}
+    \item \textbf{display.BUFFER\_SIZE}: Sets the buffer size for storing and visualizing simulation frames.
+\end{itemize}
+
+All parameters are editable prior to runtime and are loaded automatically at initialization. This modular design facilitates reproducibility and allows users to test different configurations without modifying source code.
+
+\chapter{Simulation Configuration}
+\label{appendix:config}
+
+This appendix documents the configuration settings used to generate the simulation results presented in Chapter~\ref{chap:Results}. The parameters were specified using a structured configuration file, which enabled reproducible control over the robot's behavior and the optimization environment.
+
+\section*{Configuration File Structure}
+The configuration file is divided into thematic sections: \texttt{environment}, \texttt{robot}, \texttt{optimization}, and \texttt{display}. The following settings were used for Scenarios 1 and 2 ("Navigation Around a Risk Zone" and "Traversing Across Known Safe Area"). For Scenario 3 ("Exploring Without a Goal in Mind"), the only change was setting \texttt{environment.MODE} to \texttt{"explore"}.
+
+
+\begin{verbatim}
+[environment]
+FILENAME = "terrain.csv"
+THRESHOLD = 1000
+SIMPLIFICATION_CONSTANT = 4
+
+[robot]
+ROBOT_RADIUS = 2
+MODE = "navigate"
+
+[optimization]
+NUM_EXPANDERS = 40
+KERNEL_VARIANCE = 2
+KERNEL_LENGTHSCALE = 30
+BETA = 3
+LIPSCHITZ = 0.003
+
+[display]
+BUFFER_SIZE = 1
+\end{verbatim}
+
+
 
 \end{appendices}

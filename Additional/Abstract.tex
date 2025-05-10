@@ -1,15 +1,10 @@
-% \chapter*{Abstract}
 \chapter*{Abstract}
 \chaptermark{Abstract}
 \label{chap:Abstract}
 \addcontentsline{toc}{chapter}{Abstract}
-%Insert your abstract below the line
-%-------------------------------------------
 
-This thesis presents a novel approach to autonomous navigation for planetary exploration that addresses the critical limitations of traditional wheeled rovers. Building upon NASA's LASSIE (Legged Autonomous Surface Science In Analogue Environments) project, we develop an integrated algorithm for legged rovers that utilizes proprioceptive leg motor data to assess geotechnical properties of planetary regolith while simultaneously planning safe and information-rich exploration paths.
+This thesis presents \algonamefull{} (\algoname{}), a navigation framework for autonomous exploration in granular environments where proprioceptive sensing is the main mode of terrain mapping. The method is motivated by challenges faced in planetary exploration, particularly in scenarios where deformable terrain properties cannot be reliably inferred from visual input. Developed within the context of NASA’s LASSIE (Legged Autonomous Surface Science In Analogue Environments) project, \algoname{} enables a legged robot to traverse unfamiliar regolith terrain using only proprioceptive feedback from its limbs.
 
-The algorithm operates within the LASSIE exploration loop, combining measurements from compression and shearing tests performed by the robot's legs with conventional obstacle detection systems (cameras, lidar, radar). This dual-objective approach not only plans paths that avoid dangerous terrain but also strategically selects future testing locations to maximize knowledge acquisition about the environment.
+The core contribution is a dual-layer architecture combining global terrain expansion with real-time reactive control. The global layer models terrain risk using a Gaussian Process updated through in-place mechanical tests at each step. It incrementally expands a certified safe set of traversable regions using a confidence-aware exploration strategy inspired by Safe Bayesian Optimization. The local control layer uses a diffeomorphism-based reactive controller adapted from Voronoi and power diagram methods, allowing the robot to navigate through complex, concave environments without requiring global replanning.
 
-Extensive simulation and testing in analog environments demonstrates how this algorithm enhances autonomous capabilities for legged rovers navigating unknown granular terrain. Results show significant improvements in both terrain assessment accuracy and exploration efficiency compared to traditional methods that rely solely on visual data.
-
-By enabling rovers to actively probe their environment and make informed decisions based on physical terrain properties, this research addresses a fundamental challenge in planetary exploration and lays groundwork for the identification of safe locations for future human infrastructure. The algorithmic framework presented provides an essential capability for sustainable robotic and eventual human presence beyond Earth.
+Simulations demonstrate that \algoname{} successfully balances exploration and exploitation, avoids unsafe regions, and generalizes across navigation and pure exploration tasks. The algorithm achieves real-time performance and robustness without vision, supporting future missions in low-light or dust-obscured extraterrestrial environments. This work establishes a foundation for proprioception-driven planning, expanding autonomous mobility capabilities in safety-critical planetary operations.
